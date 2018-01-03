@@ -1,7 +1,22 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <%# <title>Cover Template for Bootstrap</title> %>
+
+    <!-- Bootstrap core CSS -->
+    <%# <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet"> %>
+
+    <!-- Custom styles for this template -->
+    <%# <link href="cover.css" rel="stylesheet"> %>
+
     <title>FauxShipIt</title>
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +24,39 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <header class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Faux Ship It!</h3>
+
+              <nav class="nav nav-masthead">
+                <%= link_to 'Home', pages_path, class: "nav-link #{current_page?(pages_path) ? 'active' : ''}" %>
+                <%= link_to 'Features', features_pages_path, class: "nav-link #{current_page?(features_pages_path) ? 'active' : ''}" %>
+                <%= link_to 'Contact', contact_pages_path, class: "nav-link #{current_page?(contact_pages_path) ? 'active' : ''}" %>
+              </nav>
+            </div>
+          </header>
+
+          <main role="main" class="inner cover">
+            <%= yield%>
+          </main>
+
+          <footer class="mastfoot">
+            <div class="inner">
+              <p>Kitchen Finks Inc</p>
+            </div>
+          </footer>
+
+        </div>
+
+      </div>
+
+    </div>
   </body>
+
 </html>
