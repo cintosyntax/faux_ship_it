@@ -17,5 +17,6 @@ test:
 
 production:
   <<: *default
+  host: postgres
   database: fsi_production
 

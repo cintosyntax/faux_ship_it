@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/_health', to: 'application#health'
   
   root to: "pages#index"
   resources :pages, path: "/" do
